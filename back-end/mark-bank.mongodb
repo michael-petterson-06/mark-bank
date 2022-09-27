@@ -1,0 +1,28 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+const database = 'mark-bank';
+const collection = 'users';
+
+// Create a new database.
+use(database);
+
+// Create a new collection.
+db.createCollection(users);
+
+use('mark-bank')
+db.users.insertOne({
+  nome: 'Davi Petterson',
+  idade: 14,
+  profissão: 'Biologo Marinho',
+  email: 'davi@davi.com',
+  password: 'e10adc3949ba59abbe56e057f20f883e'
+})
+
+use('mark-bank')
+db.users.find()
+
+use('mark-bank');
+db.users.deleteOne(
+   {email: "davi@davi.com"}
+)
