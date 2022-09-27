@@ -1,3 +1,7 @@
 const Users = require('./Users');
+const Login = require('./Login');
 
-module.exports = {Users};
+module.exports = {
+    Users,
+    Login
+};

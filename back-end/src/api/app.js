@@ -8,6 +8,9 @@ const routers = require('../routers');
 
 app.use(bodyParser.json());
 app.use(cors());
+
+
+app.use('/login', routers.Login);
 app.use('/users', routers.Users);
 
 module.exports = app;

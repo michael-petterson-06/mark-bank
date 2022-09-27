@@ -5,4 +5,13 @@ const getAll = async (_req, res) => {
     return res.status(200).json(getAll);
 }
 
-module.exports = { getAll };
+const login = async (req, res) => {
+    const { body } = req;
+    const userLogin = await Users.login(body);
+    return res.status(200).json(userLogin);
+}
+
+module.exports = {
+    getAll,
+    login
+};
