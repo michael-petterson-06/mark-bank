@@ -15,8 +15,8 @@ const login = async ({email, password}) => {
     const user = await Users.getByEmailPassword({email, password, md5Password});
 
     if (!user) return NOTFOUND;
+ 
     const { password:_, ...userLogin } = user;
-    
     const token = createToken(userLogin);
 
     const userToken = {
