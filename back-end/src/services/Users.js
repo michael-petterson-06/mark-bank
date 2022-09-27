@@ -1,7 +1,6 @@
 const crypto = require('crypto');
 const Users = require('../models/Users');
-const createToken = require('../middlewares/createToken/createToken');
-
+const createToken = require('../middlewares/token/createToken');
 
 const NOTFOUND = {code: 404, message: 'Usuário não encontrado'};
 
