@@ -14,6 +14,7 @@ const getByEmailPassword = async ({email, password}) => {
 }
 
 const getEmail = async (email) => {
+    // console.log(email)
     const db = await connection();
     const user = await db.collection(collection).findOne({email});
     return user;
