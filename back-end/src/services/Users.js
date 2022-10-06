@@ -11,7 +11,8 @@ const getAll = async () => {
 
 const login = async ({email, password}) => {
     const md5Password = crypto.createHash('md5').update(password).digest('hex');
-    const user = await Users.getByEmailPassword({email, password, md5Password});
+    
+    const user = await Users.getByEmailPassword({email, password: md5Password});
 
     if (!user) return NOTFOUND;
  

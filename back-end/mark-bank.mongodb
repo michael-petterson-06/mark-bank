@@ -12,10 +12,10 @@ db.createCollection(users);
 
 use('mark-bank')
 db.users.insertOne({
-  nome: 'Davi Petterson',
-  idade: 14,
-  profissão: 'Biologo Marinho',
-  email: 'davi@davi.com',
+  nome: 'Jair Messias',
+  idade: 67,
+  profissão: 'Presidente',
+  email: 'messias@messias.com',
   password: 'e10adc3949ba59abbe56e057f20f883e'
 })
 

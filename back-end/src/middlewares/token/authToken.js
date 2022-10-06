@@ -18,9 +18,11 @@ const authToken = async (req, _res, next) => {
         if (!user) {
             return next({code: 401, message: 'Token of user not found'});
         }
+  
         const {_id, password, ...useWithOutPassword } = user;
         req.user = {id: _id, ...useWithOutPassword}
         next();
+  
     } catch (err) {
 
         return next({code: 401, message: 'Expered or invalid token'});

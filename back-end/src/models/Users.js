@@ -7,6 +7,7 @@ const getAll = async () => connection()
 
 
 const getByEmailPassword = async ({email, password}) => {
+    console.log(password)
     const db = await connection();
     const user = await db.collection(collection).findOne({email, password});
     return user;
