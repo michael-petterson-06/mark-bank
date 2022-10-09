@@ -3,6 +3,7 @@ const joi = require('joi');
 const useSchema = joi.object().keys({
     name: joi.string().not().empty().required(),
     email: joi.string().not().empty().email().required(),
+    password: joi.string().min(6).not().empty().required(),
     idade: joi.number().not().empty().required(),
     gitHub: joi.string().not().empty().required(),
     cep: joi.string().not().empty().required(),
