@@ -7,21 +7,38 @@ const getAll = async () => connection()
 
 
 const getByEmailPassword = async ({email, password}) => {
-    console.log(password)
     const db = await connection();
     const user = await db.collection(collection).findOne({email, password});
     return user;
 }
 
 const getEmail = async (email) => {
-    // console.log(email)
     const db = await connection();
     const user = await db.collection(collection).findOne({email});
     return user;
 }
 
+
+const createUser = async (body) => {
+   
+           
+    const db = await connection();
+    const result = await db.collection(collection)
+        .insertOne({...body})
+        
+    const newUser = {id: result.insertedId, ...body} 
+    return(newUser)
+     
+    // parei ak 08/10
+    
+}
+
+
+
+
 module.exports = {
     getAll,
     getByEmailPassword,
-    getEmail
+    getEmail,
+    createUser
  };

@@ -11,7 +11,14 @@ const login = async (req, res) => {
     return res.status(200).json(userLogin);
 }
 
+const createUser = async (req, res) => {
+    const { body } = req;
+    const newUser = await Users.createUser({...body});
+    return res.status(201).json(newUser);
+}
+
 module.exports = {
     getAll,
-    login
+    login,
+    createUser
 };

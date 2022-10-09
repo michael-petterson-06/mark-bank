@@ -11,11 +11,9 @@ const getAll = async () => {
 
 const login = async ({email, password}) => {
     const md5Password = crypto.createHash('md5').update(password).digest('hex');
-    
     const user = await Users.getByEmailPassword({email, password: md5Password});
 
     if (!user) return NOTFOUND;
- 
     const { password:_, ...userLogin } = user;
     const token = createToken(userLogin);
 
@@ -25,10 +23,21 @@ const login = async ({email, password}) => {
     };
 
     return userToken;
-    
 };
+
+const createUser = async (body) => {
+
+    const { password, ...allBody } = body;
+    const md5Password = crypto.createHash('md5').update(password).digest('hex');
+    
+    const dataValues = await Users.createUser({...allBody, password: md5Password});
+    return dataValues
+    // console.log(dataValues);
+    // parei aqui
+}
 
 module.exports = { 
     getAll,
-    login
+    login,
+    createUser
 };
