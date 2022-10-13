@@ -35,11 +35,20 @@ const createUser = async (body) => {
 }
 
 
+const editUser = async (id, body) => {
+    const db = await connection();
+    await db.collection(collection).updateOne(
+        {_id: ObjectId(id)},
+        { $set: {...body}}
+    )
+}
+
 
 module.exports = {
     getAll,
     getByEmailPassword,
     getEmail,
     createUser,
-    getById
+    getById,
+    editUser
  };

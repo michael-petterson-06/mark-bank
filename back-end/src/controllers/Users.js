@@ -23,9 +23,17 @@ const createUser = async (req, res) => {
     return res.status(201).json(newUser);
 }
 
+const editUser = async (req, res) => {
+    const { id } = req.params;
+    const { body } = req;
+    const editedUser = await Users.editUser(id, body);
+    return res.status(200).json(editedUser)
+}
+
 module.exports = {
     getAll,
     login,
     createUser,
-    getById
+    getById,
+    editUser
 };

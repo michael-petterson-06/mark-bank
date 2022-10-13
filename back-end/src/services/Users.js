@@ -3,6 +3,7 @@ const Users = require('../models/Users');
 const createToken = require('../middlewares/token/createToken');
 
 const NOTFOUND = {code: 404, message: 'Usuário não encontrado'};
+const CONFLICT = {code: 404, message: 'Usuário não existe'};
 
 const getAll = async () => {
     const getAll = await Users.getAll();
@@ -47,11 +48,21 @@ const createUser = async (body) => {
     }
 
     return userToken;
+};
+
+
+const editUser = async (id, body) => {
+    const user = await Users.getById(id);
+    if (!user) return CONFLICT;
+    const editedUser = Users.editUser(id, body);
+    return editedUser;        
 }
+
 
 module.exports = { 
     getAll,
     login,
     createUser,
-    getById
+    getById,
+    editUser
 };
