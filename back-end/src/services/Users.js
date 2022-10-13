@@ -29,11 +29,19 @@ const createUser = async (body) => {
 
     const { password, ...allBody } = body;
     const md5Password = crypto.createHash('md5').update(password).digest('hex');
-    
     const dataValues = await Users.createUser({...allBody, password: md5Password});
-    return dataValues
-    // console.log(dataValues);
-    // parei aqui
+
+    if (dataValues.error) return dataValues;
+
+    const { password: _, ...newUser} = dataValues;
+    const token = createToken(newUser);
+
+    const userToken = {
+        ...newUser,
+        token,
+    }
+
+    return userToken;
 }
 
 module.exports = { 
