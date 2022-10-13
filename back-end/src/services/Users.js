@@ -9,6 +9,11 @@ const getAll = async () => {
     return getAll;
 };
 
+const getById = async (id) => {
+    const user = await Users.getById(id);
+    return user;
+}
+
 const login = async ({email, password}) => {
     const md5Password = crypto.createHash('md5').update(password).digest('hex');
     const user = await Users.getByEmailPassword({email, password: md5Password});
@@ -47,5 +52,6 @@ const createUser = async (body) => {
 module.exports = { 
     getAll,
     login,
-    createUser
+    createUser,
+    getById
 };
