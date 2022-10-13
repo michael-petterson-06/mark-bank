@@ -5,6 +5,12 @@ const getAll = async (_req, res) => {
     return res.status(200).json(getAll);
 }
 
+const getById = async (req, res, next) => {
+    const { id } = req.params
+    const user = await Users.getById(id);
+    if (user.code) return next(user);
+    return res.status(200).json(user);
+}
 const login = async (req, res) => {
     const { body } = req;
     const userLogin = await Users.login(body);
@@ -20,5 +26,6 @@ const createUser = async (req, res) => {
 module.exports = {
     getAll,
     login,
-    createUser
+    createUser,
+    getById
 };
