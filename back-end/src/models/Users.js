@@ -29,9 +29,9 @@ const getEmail = async (email) => {
 
 const createUser = async (body) => {
     const db = await connection();
-    const result = await db.collection(collection).insertOne({...body})
-    const newUser = {id: result.insertedId, ...body} 
-    return(newUser)
+    const result = await db.collection(collection).insertOne({...body});
+    const newUser = {id: result.insertedId, ...body};
+    return newUser;
 }
 
 
@@ -44,11 +44,18 @@ const editUser = async (id, body) => {
 }
 
 
+const deleteUser = async (id) => {
+    const  db = await connection();
+    await db.collection(collection).deleteOne({_id: ObjectId(id)});
+}
+
+
 module.exports = {
     getAll,
     getByEmailPassword,
     getEmail,
     createUser,
     getById,
-    editUser
+    editUser,
+    deleteUser
  };

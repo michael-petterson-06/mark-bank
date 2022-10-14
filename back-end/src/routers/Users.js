@@ -11,5 +11,6 @@ router.post('/',token, validateUser, verifyUser, Users.createUser);
 router.get('/', Users.getAll);
 router.get('/:id', token, Users.getById);
 router.patch('/:id', token, validateUser, Users.editUser);
+router.delete('/:id', token, Users.deleteUser);
 
 module.exports = router;

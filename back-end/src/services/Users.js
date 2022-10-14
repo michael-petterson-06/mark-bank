@@ -54,8 +54,11 @@ const createUser = async (body) => {
 const editUser = async (id, body) => {
     const user = await Users.getById(id);
     if (!user) return CONFLICT;
-    const editedUser = Users.editUser(id, body);
-    return editedUser;        
+    Users.editUser(id, body);
+}
+
+const deleteUser = async (id) => {
+    await Users.deleteUser(id);
 }
 
 
@@ -64,5 +67,6 @@ module.exports = {
     login,
     createUser,
     getById,
-    editUser
+    editUser,
+    deleteUser
 };

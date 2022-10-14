@@ -1,3 +1,5 @@
+const { expression } = require('joi');
+const { connect } = require('../routers/Users');
 const Users = require('../services/Users');
 
 const getAll = async (_req, res) => {
@@ -30,10 +32,20 @@ const editUser = async (req, res) => {
     return res.status(200).json(editedUser)
 }
 
+
+const deleteUser = async (req, res) => {
+    const { id } = req.params;
+    console.log(id)
+    await Users.deleteUser(id);
+    return res.status(204).end();
+}
+
+
 module.exports = {
     getAll,
     login,
     createUser,
     getById,
-    editUser
+    editUser,
+    deleteUser
 };
