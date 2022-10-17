@@ -1,6 +1,6 @@
 const  Users  = require("../../models/Users");
 
-const CONFLITC = {code: 409, message: 'Use already registered'};
+const CONFLITC = {code: 409, message: 'Usuário já está registrado'};
 
 const verifyUserAlreadyExists = async (email) => {
      const userAlreadyExists = await Users.getEmail(email);

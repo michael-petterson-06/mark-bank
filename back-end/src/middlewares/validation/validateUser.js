@@ -23,4 +23,3 @@ const validateUser = async (req,  _res, next) => {
 }
 
 module.exports = validateUser;
-// id, name, idade, gitHub, cep, estado, cidade, bairro, rua, numero, complemento
