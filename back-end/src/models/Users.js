@@ -9,8 +9,12 @@ const getAll = async () => connection()
 
 const getById = async (id) => {
     const db = await connection();
-    const user = await db.collection(collection).findOne({ _id: ObjectId(id)});
-    return user;
+    try {
+        const user = await db.collection(collection).findOne({ _id: ObjectId(id)});
+         return user;
+     } catch (error) {
+         return null;
+    }
 }
 
 
@@ -46,7 +50,12 @@ const editUser = async (id, body) => {
 
 const deleteUser = async (id) => {
     const  db = await connection();
-    await db.collection(collection).deleteOne({_id: ObjectId(id)});
+   try {
+        const resposta = await db.collection(collection).deleteOne({_id: ObjectId(id)});
+        return resposta.deletedCount;
+    } catch (error) {
+        return null;
+   }
 }
 
 

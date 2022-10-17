@@ -4,6 +4,8 @@ const createToken = require('../middlewares/token/createToken');
 
 const NOTFOUND = {code: 404, message: 'Usuário não encontrado'};
 const CONFLICT = {code: 404, message: 'Usuário não existe'};
+const SUCCESS_UPDATE = {code: 200, message: 'Usuário Atualizado com sucesso'};
+const SUCCESS_DELETE = {code: 200, message: 'Usuário deletado com sucesso'};
 
 const getAll = async () => {
     const getAll = await Users.getAll();
@@ -12,6 +14,7 @@ const getAll = async () => {
 
 const getById = async (id) => {
     const user = await Users.getById(id);
+    if (!user) return NOTFOUND;
     return user;
 }
 
@@ -55,10 +58,13 @@ const editUser = async (id, body) => {
     const user = await Users.getById(id);
     if (!user) return CONFLICT;
     Users.editUser(id, body);
+    return SUCCESS_UPDATE;
 }
 
 const deleteUser = async (id) => {
-    await Users.deleteUser(id);
+    const resposta = await Users.deleteUser(id);
+    if (!resposta) return NOTFOUND;
+    return SUCCESS_DELETE;
 }
 
 

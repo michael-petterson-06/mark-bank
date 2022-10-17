@@ -10,6 +10,7 @@ const getAll = async (_req, res) => {
 const getById = async (req, res, next) => {
     const { id } = req.params
     const user = await Users.getById(id);
+    
     if (user.code) return next(user);
     return res.status(200).json(user);
 }
@@ -29,15 +30,14 @@ const editUser = async (req, res) => {
     const { id } = req.params;
     const { body } = req;
     const editedUser = await Users.editUser(id, body);
-    return res.status(200).json(editedUser)
+    return res.status(editedUser.code).json(editedUser)
 }
 
 
 const deleteUser = async (req, res) => {
     const { id } = req.params;
-    console.log(id)
-    await Users.deleteUser(id);
-    return res.status(204).end();
+    const resposta = await Users.deleteUser(id);
+    return res.status(resposta.code).json(resposta);
 }
 
 
