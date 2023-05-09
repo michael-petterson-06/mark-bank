@@ -1,0 +1,11 @@
+.home {
+    width: 99%;
+    background-color: red;
+    display: flex;
+    /* justify-content: center; */
+}
+
+.home .header {
+    width: 100%;
+    background-color: aquamarine;
+}
