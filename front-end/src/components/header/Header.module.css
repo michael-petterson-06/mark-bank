@@ -1,6 +1,15 @@
 .header {
     width: 100%;
-    background-color: #1F3759;
+    /* background-color: #152e3e; */
+    background: linear-gradient(
+        90deg,
+        #1B2B3F 0%,
+        #233F6D 100%
+      );
+
+      
+      
+
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -39,12 +48,10 @@
 
 
 .containerSearchHeader {
-    /* background-color: #152E3E; */
     background-color: transparent;
     width: 30%;
     display: flex;
     align-items: center;
-    /* float: left */
 }
 
 .containerSearchHeader form {
@@ -52,7 +59,7 @@
     align-items: center;
     height: 40px;
     width: 60%;
-    background-color: #162943;
+    background-color: #1B2B3F;
     border-radius: 5px;
     padding-left: 0.5em;
 }
