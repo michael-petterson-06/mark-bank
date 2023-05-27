@@ -4,8 +4,39 @@
     height: 80px;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
 }
+
+
+.header .containerHamburguer {
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+    height: 80%;
+}
+
+.containerHamburguer .hamburguer {
+    border-radius: 100%;
+    background-color: #475666;
+    width: 35x;
+    height: 40px;
+    padding: 0.5em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.header .hamburguer svg {
+    color:  #F9FAFB;
+    font-size: 1.5em;
+}
+
+
+.containerHamburguer img {
+    padding-left: 1em;
+    height: 100%;
+}
+
 
 .containerSearchHeader {
     /* background-color: #152E3E; */
@@ -19,7 +50,7 @@
 .containerSearchHeader form {
     display: flex;
     align-items: center;
-    height: 50%;
+    height: 40px;
     width: 60%;
     background-color: #162943;
     border-radius: 5px;
@@ -28,16 +59,17 @@
 
 .containerSearchHeader input {
     height: 100%;
-    border: none;
     background-color: transparent;
     padding-left: 0.5em;
     font-size: 17px;
+    /* border-style: none; */
+    outline: 0;
+    color: #F9FAFB
 }
 
 .containerSearchHeader button {
     height: 100%;
     width: 10%;
-    border: none;
     background-color: transparent;
     padding: 0.2em;
 }
