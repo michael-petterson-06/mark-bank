@@ -1,19 +1,18 @@
 import React from 'react';
-import roitBank from '../../image/roitBank.png';
 import styles from './Home.module.css';
+import Header from '../../components/header/Header';
+
+
 
 const Home = () => {
+   
     return (
         <main className={styles.home}>
-            <header className={styles.header}>
-                <div>
-                <img src={ roitBank } alt="roit-bank" />
-                </div>
-            </header>
-            <h1>Home</h1>
+            <Header/>
         </main>
         
-    )
+   )
+
 }
 
 export default Home;
