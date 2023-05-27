@@ -1,0 +1,49 @@
+.header {
+    width: 100%;
+    background-color: #1F3759;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.containerSearchHeader {
+    /* background-color: #152E3E; */
+    background-color: transparent;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    /* float: left */
+}
+
+.containerSearchHeader form {
+    display: flex;
+    align-items: center;
+    height: 50%;
+    width: 60%;
+    background-color: #162943;
+    border-radius: 5px;
+    padding-left: 0.5em;
+}
+
+.containerSearchHeader input {
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    padding-left: 0.5em;
+    font-size: 17px;
+}
+
+.containerSearchHeader button {
+    height: 100%;
+    width: 10%;
+    border: none;
+    background-color: transparent;
+    padding: 0.2em;
+}
+
+
+.containerSearchHeader svg {
+    color: #757575;
+    font-size: 1.5em;
+}
