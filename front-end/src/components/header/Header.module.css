@@ -1,19 +1,15 @@
 .header {
-    width: 100%;
-    /* background-color: #152e3e; */
     background: linear-gradient(
         90deg,
-        #1B2B3F 0%,
-        #233F6D 100%
+        #152E3E 0%,
+        #113F5D 50%,
+        #0C517E 100%
       );
-
-      
-      
-
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 
@@ -24,26 +20,25 @@
     height: 80%;
 }
 
-.containerHamburguer .hamburguer {
+.containerHamburguer div {
     border-radius: 100%;
     background-color: #475666;
-    width: 35x;
-    height: 40px;
-    padding: 0.5em;
+    width: 36px;
+    height: 36px;
     display: flex;
-    text-align: center;
     align-items: center;
+    justify-content: center;
 }
 
-.header .hamburguer svg {
-    color:  #F9FAFB;
-    font-size: 1.5em;
+.containerHamburguer .menu {
+    width: 18x;
+    height: 18px;
 }
 
-
-.containerHamburguer img {
+.containerHamburguer .roitBank {
+    height: 26px;
+    width: 180px;
     padding-left: 1em;
-    height: 100%;
 }
 
 
