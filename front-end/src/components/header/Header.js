@@ -2,7 +2,12 @@ import React from 'react';
 import styles from './Header.module.css';
 import roitBank from './image/Grupo 4.svg';
 import menu from './image/menu.svg';
-import { BsSearch } from "react-icons/bs";
+import lupa from './image/lupa-header.svg';
+import brasil from './image/brazil.svg';
+import foto from './image/foto.png';
+import setaBaixo from './image/seta-baixo.svg';
+
+
 
 const Header = () => {
   return (
@@ -15,9 +20,22 @@ const Header = () => {
         </div>
         <div className={ styles.containerSearchHeader }>
             <form action="">
-                <button><BsSearch/></button>
+                <div>
+                  <img src={ lupa } alt="lupinha" />
+                </div>
                 <input type="text" placeholder='Busca'/>
             </form>
+            
+           <button>
+              <span>
+                <img src={brasil} alt="Bandeira do Brasil"/>
+              </span>
+              <span>
+                <img src={ setaBaixo } alt="Setinha para baixo"/>
+              </span>
+           </button>
+           
+            <img className={ styles.fotoPerfil } src={ foto } alt="foto perfil" />
         </div>
     </header>
   )
