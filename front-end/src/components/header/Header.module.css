@@ -9,6 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 
@@ -48,6 +49,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-right: 20px;
 }
 
 .containerSearchHeader form {
@@ -71,11 +73,13 @@
 
 
 form div {
+    display: flex ;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 10%;
-    background-color: transparent;
-    padding: 7px 0 0 5px;
 }
+
 
 .containerSearchHeader button {
     display: flex;
