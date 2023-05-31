@@ -1,4 +1,6 @@
 .home {
-    width: 100%;
+    /* width: 100%; */
     background-color: red;
+    display: flex;
+    flex-wrap: wrap;
 }

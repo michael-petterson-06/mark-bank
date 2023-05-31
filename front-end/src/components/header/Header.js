@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styles from './Header.module.css';
 import roitBank from './image/Grupo 4.svg';
 import menu from './image/menu.svg';
 import lupa from './image/lupa-header.svg';
 import brasil from './image/brazil.svg';
-import foto from './image/foto.png';
+import perfil from './image/foto.png';
 import setaBaixo from './image/seta-baixo.svg';
 
 
-
 const Header = () => {
+
   return (
     <header className={styles.header}>
         <div className= { styles.containerHamburguer}>
@@ -25,17 +25,11 @@ const Header = () => {
                 </div>
                 <input type="text" placeholder='Busca'/>
             </form>
-            
-           <button>
-              <span>
-                <img src={brasil} alt="Bandeira do Brasil"/>
-              </span>
-              <span>
-                <img src={ setaBaixo } alt="Setinha para baixo"/>
-              </span>
-           </button>
-           
-            <img className={ styles.fotoPerfil } src={ foto } alt="foto perfil" />
+            <button>
+                  <img src={brasil} alt="Bandeira do Brasil"/>
+                  <img src={ setaBaixo } alt="Setinha para baixo" />
+            </button>
+          <img className={ styles.fotoPerfil } src={ perfil } alt="foto perfil" />
         </div>
     </header>
   )
